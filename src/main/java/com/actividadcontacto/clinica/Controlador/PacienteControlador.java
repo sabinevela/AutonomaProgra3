@@ -24,11 +24,7 @@ public class PacienteControlador {
             return "Formulario/formulario";
         }
 
-        String idiomasUnidos = String.join(", ", paciente.getIdiomas());
-        model.addAttribute("idiomasUnidos", idiomasUnidos);
-
+        model.addAttribute("paciente", paciente);
         return "Formulario/registroExitoso";
     }
 }
-
-
