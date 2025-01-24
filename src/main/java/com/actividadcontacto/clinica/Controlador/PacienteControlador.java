@@ -28,3 +28,5 @@ public class PacienteControlador {
         return "Formulario/registroExitoso";
     }
 }
+
+

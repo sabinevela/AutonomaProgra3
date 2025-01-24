@@ -32,7 +32,8 @@
 
     <div>
       <label>Teléfono:</label>
-      <input type="text" th:field="*{telefono}"><br>
+      <input type="text" th:field="*{telefono}">
+      <br>
       <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">Error en el teléfono</span>
     </div>
 
@@ -106,6 +107,7 @@
 </div>
 </body>
 </html>
+
 
 
 
