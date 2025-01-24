@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Exitoso</title>
+</head>
+<body>
+<h1>Registro Exitoso</h1>
+<p>Nombre: <span th:text="${paciente.nombre}"></span></p>
+<p>Apellido: <span th:text="${paciente.apellido}"></span></p>
+<p>Email: <span th:text="${paciente.email}"></span></p>
+<p>Teléfono: <span th:text="${paciente.telefono}"></span></p>
+<p>Dirección: <span th:text="${paciente.direccion}"></span></p>
+<p>Edad: <span th:text="${paciente.edad}"></span></p>
+<p>Código: <span th:text="${paciente.codigo}"></span></p>
+<p>Fecha de Nacimiento: <span th:text="${paciente.fechaNacimiento}"></span></p>
+<p>Género: <span th:text="${paciente.genero}"></span></p>
+<p>Estado Civil: <span th:text="${paciente.estadoCivil}"></span></p>
+<p>Idiomas: <span th:text="${#strings.join(paciente.idiomas, ', ')}"></span></p>
+<p>Comentarios: <span th:text="${paciente.comentarios}"></span></p>
+</body>
+</html>

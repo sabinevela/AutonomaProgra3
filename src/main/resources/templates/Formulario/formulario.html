@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Clínica</title>
+</head>
+<body>
+<div>
+  <h1>Formulario Clínica</h1>
+  <form th:action="@{/guardar}" th:object="${paciente}" method="post">
+    <div>
+      <label>Nombre:</label>
+      <input type="text" th:field="*{nombre}">
+      <br>
+      <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error en el nombre</span>
+    </div>
+
+    <div>
+      <label>Apellido:</label>
+      <input type="text" th:field="*{apellido}">
+      <br>
+      <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error en el apellido</span>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" th:field="*{email}">
+      <br>
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error en el email</span>
+    </div>
+
+    <div>
+      <label>Teléfono:</label>
+      <input type="text" th:field="*{telefono}"><br>
+      <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">Error en el teléfono</span>
+    </div>
+
+    <div>
+      <label>Dirección:</label>
+      <input type="text" th:field="*{direccion}">
+      <br>
+      <span th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}">Error en la dirección</span>
+    </div>
+
+    <div>
+      <label>Edad:</label>
+      <input type="number" th:field="*{edad}">
+      <br>
+      <span th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">Error en la edad</span>
+    </div>
+
+    <div>
+      <label>Código Postal:</label>
+      <input type="text" th:field="*{codigo}">
+      <br>
+      <span th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}">Error en el código postal</span>
+    </div>
+
+    <div>
+      <label>Fecha Nacimiento:</label>
+      <input type="date" th:field="*{fechaNacimiento}">
+      <br>
+      <span th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}">Error en la fecha de nacimiento</span>
+    </div>
+
+    <div>
+      <label>Género:</label>
+      <select th:field="*{genero}">
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+      </select>
+      <br>
+      <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}">Error en el género</span>
+    </div>
+
+    <div>
+      <label>Estado Civil:</label>
+      <input type="radio" th:field="*{estadoCivil}" value="soltero">
+      <label>Soltero</label><br>
+      <input type="radio" th:field="*{estadoCivil}" value="casado">
+      <label>Casado</label><br>
+      <span th:if="${#fields.hasErrors('estadoCivil')}" th:errors="*{estadoCivil}">Error en el estado civil</span>
+    </div>
+
+    <div>
+      <label>Idiomas que hablas:</label><br>
+      <input type="checkbox" th:field="*{idiomas}" value="espanol">
+      <label>Español</label><br>
+      <input type="checkbox" th:field="*{idiomas}" value="ingles">
+      <label>Inglés</label><br>
+      <input type="checkbox" th:field="*{idiomas}" value="frances">
+      <label>Francés</label><br>
+      <span th:if="${#fields.hasErrors('idiomas')}" th:errors="*{idiomas}">Error en los idiomas</span>
+    </div>
+
+    <div>
+      <label>Comentarios:</label><br>
+      <textarea rows="4" cols="50" th:field="*{comentarios}"></textarea>
+      <br>
+      <span th:if="${#fields.hasErrors('comentarios')}" th:errors="*{comentarios}">Error en los comentarios</span>
+    </div>
+
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+</body>
+</html>
+
+
